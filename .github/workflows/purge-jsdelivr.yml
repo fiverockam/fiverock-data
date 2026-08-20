@@ -1,0 +1,3 @@
+name: Purge jsDelivr cache
+on: {push: {branches: [main], paths: [fund-performance.json]}}
+jobs: {purge: {runs-on: ubuntu-latest, steps: [{name: "Purge jsDelivr CDN cache", run: 'curl -sf "https://purge.jsdelivr.net/gh/${{ github.repository }}@main/fund-performance.json"'}]}}
